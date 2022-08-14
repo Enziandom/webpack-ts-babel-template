@@ -7,7 +7,6 @@ module.exports = {
   resolve: { extensions: [ ".ts", ".tsx", ".js" ] },
   module: {
     rules: [
-      { test: /\.tsx?$/, loader: "ts-loader", exclude: /(node_modules|bower_components)/ },
       {
         test: /\.ts$/,
         use: [
@@ -30,7 +29,8 @@ module.exports = {
           }
         ],
         exclude: /(node_modules|bower_components)/
-      }
+      },
+      { test: /\.tsx?$/, loader: "ts-loader", exclude: /(node_modules|bower_components)/ }
     ]
   }
 };
